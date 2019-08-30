@@ -1,9 +1,9 @@
 
 def search(stockName):
     try:
-        Image = open('static/stocks/'+stockName+'/'+stockName+'.png', 'r')
+        Image = open('static/stocks/'+stockName+'/'+stockName+'1.png', 'r')
         # Store configuration file values
-        print("file found")
+        print("cache found")
         return 1
 
     except FileNotFoundError:

@@ -3,6 +3,7 @@ from main import search
 
 
 app = Flask(__name__)
+app.debug = True
 
 @app.route("/")
 def index():
@@ -20,7 +21,17 @@ def requestStock():
 
 @app.route("/stockdetail")
 def displayStock(stockName):
-    return render_template("stockdetail.html", stockName = stockName)
+    stockData = []
+    with open('static/stocks/'+stockName+'/'+stockName+'.txt', 'r') as filehandle:
+        for line in filehandle:
+            currentPlace = line[:-1]
+            stockData.append(currentPlace)
+    return render_template("stockdetail.html", stockName = stockName, stockData=stockData)
+
+def predictStock(stockName):
+    stockData=stockpredict(stockName)
+    return render_template("stockdetail.html", stockName = stockName, stockData=stockData)
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
