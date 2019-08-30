@@ -2,9 +2,21 @@
 
 {% block body %}
 
+<div class="container-fluid" style="padding-left:22vw;padding-right:22vw;">
+  <p style="text-align: center;">
+    Establishing business and running it successfully takes a lot of planning, strategizing and research given the amount of competition in every sector of the market industry.<br>
+    Enter a stock name and get the best prediction of the Stock.
+  </p>
   <form method="POST">
-    <input name="sname">
-    <input type="submit">
+    <div class="input-group mb-3" style="padding:5vw">
+      <div style="position:relative;">
+        <input name="sname" id="sname" type="text" class="form-control" placeholder="Enter Stock Symbol" aria-label="Stock Symbol" aria-describedby="button-addon2">
+      </div>
+      <div class="input-group-append">
+        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
+      </div>
+    </div>
   </form>
+</div>
 
 {% endblock %}
