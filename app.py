@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
-from main import search
-
+from main import search, stockpredict
 
 app = Flask(__name__)
 app.debug = True
@@ -17,9 +16,8 @@ def requestStock():
     if(search(stockName)):
         return displayStock(stockName)
     else:
-        pass
+        return predictStock(stockName)
 
-@app.route("/stockdetail")
 def displayStock(stockName):
     stockData = []
     with open('static/stocks/'+stockName+'/'+stockName+'.txt', 'r') as filehandle:
