@@ -64,7 +64,7 @@ def stockpredict(stockName):
     i=249
     Xt = model.predict(X_test[i].reshape(1,7,1))
     pprice=scl.inverse_transform(Xt).copy()
-    pprice=round(float(pprice.tolist()[0][0]),4)
+    pprice=round(float(pprice.tolist()[0][0]),2)
 
     Xt = model.predict(X_test)
     rval = scl.inverse_transform(Y_test.reshape(-1,1))
