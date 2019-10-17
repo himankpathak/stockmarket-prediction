@@ -28,7 +28,7 @@ def processData(data,lb):
 
 # Main Stock Prediction Function
 def stockpredict(stockName):
-    data = pd.read_csv('CSV/all_stocks_5yr.csv')
+    data = pd.read_csv('dataset/all_stocks_5yr.csv')
     cl = data[data['Name']==stockName].Close
     path = os.getcwd()
     os.mkdir(path+"/static/stocks/"+stockName)
