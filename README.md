@@ -19,10 +19,13 @@ Use Anaconda as a package manager to easily set up the environment before runnin
 
 ## Setup
 
-Download the [dataset](https://www.kaggle.com/camnugent/sandp500#all_stocks_5yr.csv) and create a empty folder named "dataset" and place the file in it.
+Download the [dataset](https://www.kaggle.com/camnugent/sandp500#all_stocks_5yr.csv) and create a empty folder named "dataset" in the root directory and place the file in it.
 
 ## Running the app
 
-- Start the flask server `$ python app.py`
-- Navigate to `localhost:5000`
+- Make sure you have setup the python environment with all the required modules and you have downloaded the dataset.
+- Start the flask server with `$ python app.py` in the root folder of the project.
+- Navigate to `http://localhost:5000` to browse the app.
+
+### On a side note
 
